@@ -1,0 +1,87 @@
+Intermediate Go Programming - Part 1
+Make things work...
+
+
+Deepak Gunjetti
+Solution Architect @ Andcloud
+deepak@andcloud.io 
+@dgunjetti
+
+* Package container/list
+
+- Element is an element of a linked list.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START OMIT/,/END OMIT/
+
+- List represents a doubly linked list.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START1 OMIT/,/END1 OMIT/
+
+- New returns an initialized list.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START2 OMIT/,/END2 OMIT/
+
+* container/list (cont.)
+
+- PushFront inserts a new element e with value v at the front of list l and returns e.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START3 OMIT/,/END3 OMIT/
+
+- PushBack inserts a new element e with value v at the back of list l and returns e.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START4 OMIT/,/END4 OMIT/
+
+- To iterate over a list
+
+.code -edit src/01-DataStructures/snippet/main.go  /START5 OMIT/,/END5 OMIT/
+
+- Remove removes e from l if e is an element of list l. It returns the element value e.Value. The element must not be nil.
+
+.code -edit src/01-DataStructures/snippet/main.go  /START6 OMIT/,/END6 OMIT/
+
+* container/list (cont.)
+
+.play -edit src/01-DataStructures/containerListPkg/main.go  /START1 OMIT/,/END1 OMIT/
+
+.code -edit src/01-DataStructures/containerListPkg/main.go  /START OMIT/,/END OMIT/
+
+* stack 
+
+.code -edit src/01-DataStructures/stack/main.go /START OMIT/,/END OMIT/
+
+* stack (cont.)
+
+.play -edit src/01-DataStructures/stack/main.go /START2 OMIT/,/END2 OMIT/
+
+* Queue
+
+.code -edit src/01-DataStructures/queue/main.go /START OMIT/,/END OMIT/
+
+* Queue (cont.)
+
+.play -edit src/01-DataStructures/queue/main.go /START2 OMIT/,/END2 OMIT/
+
+* Queue via channels 
+
+.code -edit src/01-DataStructures/queue2/main.go /START OMIT/,/END OMIT/
+
+* Queue via channels(cont.)
+
+.play -edit src/01-DataStructures/queue2/main.go /START2 OMIT/,/END2 OMIT/
+
+* Binary tree
+
+.code -edit src/01-DataStructures/binaryTree/main.go /START1 OMIT/,/END1 OMIT/
+
+* Binary tree (cont.)
+
+.code -edit src/01-DataStructures/binaryTree/main.go /START2 OMIT/,/END2 OMIT/
+
+* Binary tree (cont.)
+
+.code -edit src/01-DataStructures/binaryTree/main.go /START3 OMIT/,/END3 OMIT/
+
+* Binary tree (cont.)
+
+.play -edit src/01-DataStructures/binaryTree/main.go /START4 OMIT/,/END4 OMIT/
+
