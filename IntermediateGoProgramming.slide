@@ -7,6 +7,8 @@ Solution Architect @ Andcloud
 deepak@andcloud.io 
 @dgunjetti
 
+* Data Structures
+
 * Package container/list
 
 - Element is an element of a linked list.
@@ -84,4 +86,65 @@ deepak@andcloud.io
 * Binary tree (cont.)
 
 .play -edit src/01-DataStructures/binaryTree/main.go /START4 OMIT/,/END4 OMIT/
+
+* Design Patterns
+
+* Singleton Design Pattern
+
+- Having unique instance of a type in the application.
+
+.code -edit src/02-DesignPatterns/singleton/repo/main.go /START1 OMIT/,/END1 OMIT/
+
+* Singleton (cont.)
+
+.code -edit src/02-DesignPatterns/singleton/repo/main.go /START2 OMIT/,/END2 OMIT/
+
+* Singleton (cont.)
+
+.play -edit src/02-DesignPatterns/singleton/repo/main.go /START3 OMIT/,/END3 OMIT/
+
+* Builder Pattern
+
+- Abstracts complex creations so that object creation is separated from the object user
+
+- Create an object step by step by filling its fields and creating the embedded objects
+
+- Reuse the object creation algorithm between many objects.
+
+* Builder Pattern (cont.)
+
+- The Builder design pattern has been commonly described as the relationship between a director, a few Builders, and the product they build. 
+
+- The director is the one in charge of construction of the objects, but the builders are the ones that return the actual object. 
+
+- Example - vehicle manufacturing
+
+- The process of creating a vehicle is more or less the same for every kind of vehicle.
+
+- That process could be representated via interfaces and individual type of vehicle builder could implement the interface.
+
+* Builder Pattern (cont.)
+
+.code -edit src/02-DesignPatterns/builder/main.go /START1 OMIT/,/END1 OMIT/
+
+- On every 'Set' step, we return the same build process, so we can chain various steps together in the same statement.
+
+* Builder Pattern (cont.)
+
+.code -edit src/02-DesignPatterns/builder/main.go /START2 OMIT/,/END2 OMIT/
+
+* Builder Pattern (cont.)
+
+- CarBuilder implements every method defined in the BuildProcess interface. 
+
+-  Director accept builders and construct vehicles together with them.
+
+* Builder Pattern (cont.)
+
+.code -edit src/02-DesignPatterns/builder/main.go /START3 OMIT/,/END3 OMIT/
+
+* Factory method 
+
+- 
+
 
