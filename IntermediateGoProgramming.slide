@@ -89,6 +89,8 @@ deepak@andcloud.io
 
 * Design Patterns
 
+* Creational Design Patterns
+
 * Singleton Design Pattern
 
 - Having unique instance of a type in the application.
@@ -109,7 +111,7 @@ deepak@andcloud.io
 
 - Create an object step by step by filling its fields and creating the embedded objects
 
-- Reuse the object creation algorithm between many objects.
+- Reusing an algorithm to create many implementations of an interface.
 
 * Builder Pattern (cont.)
 
@@ -145,6 +147,172 @@ deepak@andcloud.io
 
 * Factory method 
 
-- 
+- Delegating the creation of family of object to Factory.
 
+- Abstracting the user from the knowledge of pool of object he could use to achieve a specific purpose.
+
+- user works at the interface level instead of with concrete implementations
+
+- we gain an extra layer of encapsulation.
+
+- Being able to add more objects to family.
+
+- Ex. Traveling agency that acts as Factory for trips.
+
+* Factory method (cont.)
+
+- interface of the payment method
+
+.code -edit src/02-DesignPatterns/factory/main.go /START1 OMIT/,/END1 OMIT/
+
+- consts identify the PaymentMethods of the Factory. 
+
+.code -edit src/02-DesignPatterns/factory/main.go /START2 OMIT/,/END2 OMIT/
+
+* Factory method (cont.)
+
+- GetPaymentMethod() - Factory method - Creates object of type that implement PaymentMethod interface, returns its pointer. Error if PaymentMethod requested is not registered.
+
+.code -edit src/02-DesignPatterns/factory/main.go /START3 OMIT/,/END3 OMIT/
+
+* Factory method (cont.)
+
+- Create two payment methods that implement interface.
+
+.code -edit src/02-DesignPatterns/factory/main.go /START4 OMIT/,/END4 OMIT/
+
+* Factory method (cont.)
+
+- common method to retrieve objects that implement interface
+
+.play -edit src/02-DesignPatterns/factory/main.go /START5 OMIT/,/END5 OMIT/
+
+- To add new payment method, we need to add const, case in GetPaymountMethod, we are done.
+
+
+* Abstract Factory 
+
+- Factory method is used to group family of related objects in a structured hierarcy of families.
+
+- Provide a new layer of encapsulation for factory method that returns a common interface for all factories.
+
+- Group common factories into super factory.
+
+- Used when object's for a particular field is very large and can be grouped into families and create a unique point for object creation.
+
+* Abstract Factory (cont.)
+
+Ex: 
+
+- Vehicle factory -> car factory, bike factory
+
+- car factory -> family car, luxury car
+
+- bike factory -> sports bike, cruise bike 
+
+- All objects implement Vehicle interface and Car or Bike interface.
+
+* Abstract Factory (cont.)
+
+.code -edit src/02-DesignPatterns/abstractFactory/main.go /START1 OMIT/,/END1 OMIT/
+
+* Abstract Factory (cont.)
+
+.code -edit src/02-DesignPatterns/abstractFactory/main.go /START2 OMIT/,/END2 OMIT/
+
+* Abstract Factory (cont.)
+
+.code -edit src/02-DesignPatterns/abstractFactory/main.go /START3 OMIT/,/END3 OMIT/
+
+* Abstract Factory (cont.)
+
+.code -edit src/02-DesignPatterns/abstractFactory/main.go /START4 OMIT/,/END4 OMIT/
+
+* Abstract Factory (cont.)
+
+.code -edit src/02-DesignPatterns/abstractFactory/main.go /START5 OMIT/,/END5 OMIT/
+
+* Abstract Factory (cont.)
+
+.play -edit src/02-DesignPatterns/abstractFactory/main.go /START6 OMIT/,/END6 OMIT/
+
+* Prototype Design Pattern 
+
+- Builder patterns we are dealing with repetitive building algorithm.
+
+- Factory simplify creation of many types of objects.
+
+- Prototype pattern, we will use already created instance of some type to clone it and complete it with the particular needs of each context.
+
+- Useful when we have objects with many fields and embedded types.
+
+- Maintain a set of objects that will be cloned to create new instances
+
+- Provide a default value of some type to start working on top of it
+
+* Prototype (cont.)
+
+Ex:
+
+- shirt-cloner object and interface to ask for different types of shirts (white, black, and blue)
+
+* Prototype (cont.)
+
+.code -edit src/02-DesignPatterns/prototype/main.go /START1 OMIT/,/END1 OMIT/
+
+* Prototype (cont.)
+
+.code -edit src/02-DesignPatterns/prototype/main.go /START2 OMIT/,/END2 OMIT/
+
+* Prototype (cont.)
+
+.play -edit src/02-DesignPatterns/prototype/main.go /START3 OMIT/,/END3 OMIT/
+
+* Structural Design Patterns
+
+* Composite Design Pattern
+
+- Objects composed of other objects.
+
+- Two type of composition - direct composition, embedding composition
+
+* Direct composition
+
+.code -edit src/02-DesignPatterns/composition02/main.go /START1 OMIT/,/END1 OMIT/
+
+* Direct composition (cont.)
+
+.play -edit src/02-DesignPatterns/composition02/main.go /START2 OMIT/,/END2 OMIT/
+
+* Embedded composition (cont.)
+
+.code -edit src/02-DesignPatterns/composition03/main.go /START1 OMIT/,/END1 OMIT/
+
+.play -edit src/02-DesignPatterns/composition03/main.go /START2 OMIT/,/END2 OMIT/
+
+-  compiler will create Animal and Swimmer variable implicitly, with its fields initialized to zero.
+
+* Binary Tree compositions
+
+.code -edit src/02-DesignPatterns/composition01/main.go /START1 OMIT/,/END1 OMIT/
+
+.play -edit src/02-DesignPatterns/composition01/main.go /START2 OMIT/,/END2 OMIT/
+
+* Composition with interfaces 
+
+.code -edit src/02-DesignPatterns/composition04/main.go /START1 OMIT/,/END1 OMIT/
+
+.code -edit src/02-DesignPatterns/composition04/main.go /START2 OMIT/,/END2 OMIT/
+
+* Composition with interfaces (cont.)
+
+.play -edit src/02-DesignPatterns/composition04/main.go /START3 OMIT/,/END3 OMIT/
+
+* Usage of function values in composition 
+
+.code -edit src/02-DesignPatterns/composition05/main.go /START1 OMIT/,/END1 OMIT/
+
+* function values (cont.)
+
+.play -edit src/02-DesignPatterns/composition05/main.go /START2 OMIT/,/END2 OMIT/
 
