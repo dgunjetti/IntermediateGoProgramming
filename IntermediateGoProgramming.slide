@@ -316,3 +316,93 @@ Ex:
 
 .play -edit src/02-DesignPatterns/composition05/main.go /START2 OMIT/,/END2 OMIT/
 
+
+* Adapter design pattern
+
+-  An interface gets outdated and it's not possible to replace it easily or fast. Instead, you create a new interface to deal with the current needs of your application, which, under the hood, uses implementations of the old interface.
+
+-  we will have an old Printer interface and a new one. Having an old interface called LegacyPrinter and a new one called ModernPrinter, Create an Adapter object that implements the ModernPrinter interface. The new Adapter object must contain an instance of the LegacyPrinter interface.
+
+* Adapter design pattern (cont.)
+
+.code -edit src/02-DesignPatterns/adapter01/main.go /START1 OMIT/,/END1 OMIT/
+
+* Adapter design pattern (cont.)
+
+.play -edit src/02-DesignPatterns/adapter01/main.go /START2 OMIT/,/END2 OMIT/
+
+* Adapter design pattern in http package
+
+.code -edit src/02-DesignPatterns/adapter02/main.go /START OMIT/,/END OMIT/
+
+.code -edit src/02-DesignPatterns/adapter03/main.go /START OMIT/,/END OMIT/
+
+- HandleFunc function is  adapter for using functions directly as ServeHTTP implementations. 
+
+* Adapter design pattern in http package (cont.)
+
+.code -edit src/02-DesignPatterns/adapter02/snip.go /START2 OMIT/,/END2 OMIT/
+
+- We can define a type that is a function in the same way that we define a struct. We make this function-type to implement the ServeHTTP method. Finally, from the ServeHTTP function, we call the receiver itself f(w, r).
+
+- When we define a function like func(ResponseWriter, *Request), it is implicitly being recognized as HandlerFunc. And because the HandleFunc function implements the Handler interface, our function implements the Handler interface implicitly too.
+
+- If A = B and B = C, then A = C. Implicit implementation gives a lot of flexibility and power to Go
+
+* Bridge design pattern
+
+- It decouples the abstraction from implementation so that both can vary independently.
+
+Ex: Two printers, two ways of printing for each.
+
+- Two Interfaces - PrintAPI, PrintAbstraction
+
+- PrintAPI has - Impl1, Impl2
+
+- User structs - user1, user2
+
+* Bridge design pattern (cont.)
+
+.code -edit src/02-DesignPatterns/bridge/main.go /START1 OMIT/,/END1 OMIT/
+
+* Bridge design pattern (cont.)
+
+.code -edit src/02-DesignPatterns/bridge/main.go /START2 OMIT/,/END2 OMIT/
+
+* Bridge design pattern (cont.)
+
+.code -edit src/02-DesignPatterns/bridge/main.go /START3 OMIT/,/END3 OMIT/
+
+* Bridge design pattern (cont.)
+
+.code -edit src/02-DesignPatterns/bridge/main.go /START4 OMIT/,/END4 OMIT/
+
+- Uncouple an object and its implementation for the PrintMessage method. 
+
+- Reuse its abstractions as well as its implementations. 
+
+- We can swap the printer abstractions as well as the printer APIs as much as we want without affecting the user code.
+
+* Proxy pattern
+
+- Proxy pattern will wraps an object to hide some of its characteristics. 
+
+- characteristics could be
+   - it is remote object
+   - very heavy object, big image, TB database,
+   - restricted access object.
+
+* Proxy pattern (cont.)
+
+- Provide a new abstraction layer that is easy to work with, and can be changed easily
+
+- create a remote proxy, which is going to be a cache of objects before accessing a database.
+
+- All accesse to the database of users will be done through the Proxy type.
+
+- A stack of n number of recent users will be kept in the Proxy.
+
+- If a user already exists in the stack, it won't query the database, and will return the stored one
+
+- If the queried user doesn't exist in the stack, it will query the database, remove the oldest user in the stack if it's - full, store the new one, and return it.
+
