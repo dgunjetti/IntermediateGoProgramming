@@ -93,7 +93,9 @@ deepak@andcloud.io
 
 * Singleton Design Pattern
 
-- Having unique instance of a type in the application.
+- Having unique instance of a type in the application, that is shared by multiple goroutines.
+
+- Need to restrict object creation of some type to a single unit along the entire program.
 
 .code -edit src/02-DesignPatterns/singleton/repo/main.go /START1 OMIT/,/END1 OMIT/
 
@@ -157,7 +159,6 @@ deepak@andcloud.io
 
 - Being able to add more objects to family.
 
-- Ex. Traveling agency that acts as Factory for trips.
 
 * Factory method (cont.)
 
@@ -405,4 +406,8 @@ Ex: Two printers, two ways of printing for each.
 - If a user already exists in the stack, it won't query the database, and will return the stored one
 
 - If the queried user doesn't exist in the stack, it will query the database, remove the oldest user in the stack if it's - full, store the new one, and return it.
+
+- UserFinder interface is implemented by database and proxy.
+
+* Proxy pattern (cont.)
 
